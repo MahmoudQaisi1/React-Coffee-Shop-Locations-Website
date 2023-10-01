@@ -1,0 +1,64 @@
+.App{
+    .card-section{
+        background-color: #FFF7D4 ;
+        width: 51%;
+        position: absolute;
+        left: 0;
+        top: 100px;
+        border: 5px solid #1A120B;
+        border-left: none;
+        padding: 20px 10px;
+
+        @media screen and (max-width: 1000px) {
+            width: 100%;
+            border-right: none;
+            top: 400px;
+        }
+
+        *{
+            color: #1A120B;
+        }
+
+        .section-header{
+            
+            border-bottom: 5px solid #1A120B;
+            padding-bottom: 10px;
+
+            h1{
+                font-family: 'Pacifico', cursive;
+            }
+    
+            p{
+                font-family: 'Lora', serif;
+                font-style: italic;
+                font-weight: bold;
+            }
+        }
+
+        .section-cards{
+            .card{
+                position: relative;
+                margin: 20px;
+                padding-bottom: 20px;
+                border-bottom: 5px solid #1A120B;
+
+                *{
+                    padding: 5px 5px;
+                    font-family: 'Lora', serif; 
+                    font-weight: bold;
+                }
+
+                span{
+                    font-family: 'Pacifico', cursive;
+                }
+
+                img{
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                    border: 5px solid #1A120B;
+                }
+            }
+        }
+    }
+}

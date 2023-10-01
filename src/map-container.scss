@@ -1,0 +1,67 @@
+.App{
+    .map-container{
+        height: 500px;
+        width: 48%;
+        position: fixed;
+        right: 0;
+        top: 100px;
+        border: 5px solid #1A120B;
+        border-right: none ;
+
+        @media screen and (max-width: 1000px) {
+            height: 250px;
+            width: 100%;
+            border-left: none;
+            z-index: 1;
+        }
+
+        .map{
+            height: 490px;
+
+            @media screen and (max-width: 1000px) {
+                height: 240px;
+            }
+        }
+
+        .popup-wrapper{
+            .leaflet-popup-content-wrapper{
+                background-color: #1A120B;
+                border-radius: 0;
+            }
+
+            a.leaflet-popup-close-button{
+                color: #FFF7D4;
+            }
+
+            .leaflet-popup-tip{
+                background-color: #1A120B;
+            }
+        }
+
+        .popup{
+            padding: 5px;
+            flex-basis: content;
+            background-color: #FFF7D4;
+            position: relative;
+
+            *{
+                margin: 2px ;
+                font-family: 'Lora', serif; 
+                font-weight: bold;
+            }
+
+            span{
+                font-family: 'Pacifico', cursive;
+            }
+
+            img{
+                border: 5px solid #1A120B;
+                margin: 5px;
+                padding: 5px;
+                @media screen and (max-width: 1000px) {
+                    display: none;
+                }
+            }
+        }
+    }
+}

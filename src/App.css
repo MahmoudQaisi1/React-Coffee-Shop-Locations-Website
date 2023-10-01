@@ -1,38 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora&family=Pacifico&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  transition: all 0.3s;
+}
+
+body {
+  background: url("./images/background.png") no-repeat center fixed;
+  background-size: cover;
+  min-width: 550px;
+}
+
 .App {
-  text-align: center;
+  width: 98vw;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App .map-container {
+  height: 500px;
+  width: 48%;
+  position: fixed;
+  right: 0;
+  top: 100px;
+  border: 5px solid #1A120B;
+  border-right: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (max-width: 1000px) {
+  .App .map-container {
+    height: 250px;
+    width: 100%;
+    border-left: none;
+    z-index: 1;
+  }
+}
+.App .map-container .map {
+  height: 490px;
+}
+@media screen and (max-width: 1000px) {
+  .App .map-container .map {
+    height: 240px;
+  }
+}
+.App .map-container .popup-wrapper .leaflet-popup-content-wrapper {
+  background-color: #1A120B;
+  border-radius: 0;
+}
+.App .map-container .popup-wrapper a.leaflet-popup-close-button {
+  color: #FFF7D4;
+}
+.App .map-container .popup-wrapper .leaflet-popup-tip {
+  background-color: #1A120B;
+}
+.App .map-container .popup {
+  padding: 5px;
+  flex-basis: content;
+  background-color: #FFF7D4;
+  position: relative;
+}
+.App .map-container .popup * {
+  margin: 2px;
+  font-family: "Lora", serif;
+  font-weight: bold;
+}
+.App .map-container .popup span {
+  font-family: "Pacifico", cursive;
+}
+.App .map-container .popup img {
+  border: 5px solid #1A120B;
+  margin: 5px;
+  padding: 5px;
+}
+@media screen and (max-width: 1000px) {
+  .App .map-container .popup img {
+    display: none;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App .card-section {
+  background-color: #FFF7D4;
+  width: 51%;
+  position: absolute;
+  left: 0;
+  top: 100px;
+  border: 5px solid #1A120B;
+  border-left: none;
+  padding: 20px 10px;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media screen and (max-width: 1000px) {
+  .App .card-section {
+    width: 100%;
+    border-right: none;
+    top: 400px;
   }
 }
+.App .card-section * {
+  color: #1A120B;
+}
+.App .card-section .section-header {
+  border-bottom: 5px solid #1A120B;
+  padding-bottom: 10px;
+}
+.App .card-section .section-header h1 {
+  font-family: "Pacifico", cursive;
+}
+.App .card-section .section-header p {
+  font-family: "Lora", serif;
+  font-style: italic;
+  font-weight: bold;
+}
+.App .card-section .section-cards .card {
+  position: relative;
+  margin: 20px;
+  padding-bottom: 20px;
+  border-bottom: 5px solid #1A120B;
+}
+.App .card-section .section-cards .card * {
+  padding: 5px 5px;
+  font-family: "Lora", serif;
+  font-weight: bold;
+}
+.App .card-section .section-cards .card span {
+  font-family: "Pacifico", cursive;
+}
+.App .card-section .section-cards .card img {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: 5px solid #1A120B;
+}
+
+/*# sourceMappingURL=App.css.map */

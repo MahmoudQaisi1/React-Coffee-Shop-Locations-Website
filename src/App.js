@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import SimpleMap from './simple-map';
+import CardSection from './card-section';
+import locations from './locations';
+import { useRef } from 'react';
 
 function App() {
+  const locationsRef = useRef([]);
+
+  const scrollToLocation = (index) => {
+    if (locationsRef.current[index]) {
+      locationsRef.current[index].scrollIntoView({ behavior: 'smooth', block: "end"});
+      locationsRef.current[index].style.backgroundColor = '#d9d2b4';
+      setTimeout(()=>{
+        locationsRef.current[index].style.backgroundColor = '#FFF7D4';
+      },700);
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SimpleMap locations={locations} scrollToLocation={scrollToLocation}/>
+      <CardSection locations={locations} locationsRef={locationsRef}/>
     </div>
   );
 }
